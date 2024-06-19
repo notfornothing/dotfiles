@@ -382,8 +382,8 @@ tmux_conf_urlscan_options="--compact --dedupe"
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
-#set -g status-keys vi
-#set -g mode-keys vi
+set -g status-keys vi
+set -g mode-keys vi
 
 # replace C-b by C-a instead of using both prefixes
 # set -gu prefix2
@@ -480,3 +480,20 @@ tmux_conf_uninstall_plugins_on_reload=true
 # "$@"
 # # /!\ do not remove the previous line
 # #     do not write below this line
+
+
+# 默认终端
+set-option -g default-shell "/usr/bin/zsh"
+# set-option -g default-shell "/usr/local/bin/zsh"
+
+# -l 参数：-l 参数是告诉shell以登录shell的方式启动。在登录shell模式下，shell会读取用户的登录配置文件，例如对于 Zsh 是 ~/.zprofile、~/.zshrc、~/.zlogin 等。 
+set-option -g default-command "zsh -l"
+# 启动默认路径
+set-option -g default-path $HOME
+# 终端效果
+set-option -g default-terminal "screen-256color"
+# ssh 终端可以复制的
+set -as terminal-overrides ',rxvt-unicode-256color:Ms=\E]52;%p1%s;%p2%s\007'
+# tmux 可以复制
+set -s set-clipboard on
+
