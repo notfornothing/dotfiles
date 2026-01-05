@@ -1,21 +1,17 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-#
-export ZSH="/root/.oh-my-zsh"
-
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
+# Path to your oh-my-zsh installation.  #
+export ZSH="/Users/mac/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="lambda"
+# to know which specific one was loaded, run: echo $RANDOM_THEME # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="af-magic"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# ZSH_THEME_RANDOM_CANDIDATES=( "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -73,11 +69,11 @@ ZSH_THEME="lambda"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
          z
-        vi-mode
-        zsh-syntax-highlighting
-   zsh-autosuggestions
-   history-substring-search
-   thefuck
+         vi-mode
+         zsh-syntax-highlighting
+         zsh-autosuggestions
+         history-substring-search
+         thefuck
 )
 
 
@@ -106,26 +102,54 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#################### My personal #####################
+# editor configure
+VI_EDITOR=nvim
+
+
+# the fuck
+# You can use whatever you want as an alias, like for Mondays:
+eval $(thefuck --alias)
+# You can use whatever you want as an alias, like for Mondays:
+eval $(thefuck --alias FUCK)
+
+#################### command ################
+# python
+alias py=python
+# vim
 alias vi="nvim"
+# vim
+alias pip="pip3"
+# open zshrc
+alias zshrc="vi ~/.zshrc"
+# open ohmyzsh
+alias ohmyzsh="vi ~/.oh-my-zsh"
+# open vimrc
+alias vimrc="vi ~/.vimrc"
+# trash
+alias rm="trash-put"
 
+# proxy settings
+alias goproxy='export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890'
+alias disproxy='unset http_proxy https_proxy'
 
-# User specific environment and startup programs
-
-PATH=$PATH:$HOME/bin
-
-export PATH
-
-alias vi="nvim"
-alias tmux="tmux -2u"
-
+#################### autosuggest ####################
 bindkey ',' autosuggest-accept
 bindkey ^f autosuggest-accept
 
+################ idea hack############
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
 
-eval $(thefuck --alias)
+export GEMINI_API_KEY=""
+alias lzd='lazydocker'
 
 
-VI_EDITOR=nvim
+# noupdate
+HOMEBREW_NO_AUTO_UPDATE=1
+# Homebrew 镜像源配置（清华镜像）
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
