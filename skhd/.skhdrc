@@ -58,6 +58,3 @@ lalt - l : yabai -m space --focus next
 
 # Focus previous space by mission-control index if one exists, otherwise focus the last space
 lalt - h : yabai -m space --focus prev
-
-# Enable / Disable gaps in current workspace: ctrl + lalt - g
-ctrl + lalt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
