@@ -53,7 +53,7 @@ yabai -m rule --add app="ToDesk" space=4
 yabai -m rule --add app="NextChat" space=9
 yabai -m rule --add app="Cherry Studio" space=10
 yabai -m rule --add app="Docker Desktop" space=11
-yabai -m rule --add app="访达" space=13
+# yabai -m rule --add app="访达" space=13
 yabai -m rule --add app="Blinko" space=16
 yabai -m rule --add app="CleanClip" space=16
 yabai -m rule --add app="EnUES" space=16
@@ -63,8 +63,8 @@ yabai -m rule --add app="Karabiner-EventViewer" space=16
 yabai -m rule --add app="Loop" space=16
 yabai -m rule --add app="QQ" space=16
 yabai -m rule --add app="v2rayN" space=16
-yabai -m rule --add app="企业微信" space=16
-yabai -m rule --add app="微信" space=16
+# yabai -m rule --add app="企业微信" space=16
+# yabai -m rule --add app="微信" space=16
 yabai -m rule --add app="SogouInputSwitchHelper" space=16
 
 # 新窗口创建时最大化（zoom-fullscreen，含菜单栏的“绿点”全屏）
